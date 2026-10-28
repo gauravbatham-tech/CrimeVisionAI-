@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: crimevision-ai
+    env: node
+    plan: free
+    buildCommand: npm install && node server/generateSampleMedia.js && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: GEMINI_API_KEY
+        sync: false
