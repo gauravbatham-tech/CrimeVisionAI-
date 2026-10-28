@@ -1,0 +1,146 @@
+<svg width="800" height="450" viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" style="background:#111827; font-family: monospace;">
+  <defs>
+    <radialGradient id="evidenceSpotlight" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#1f2937" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#0b0f19" stop-opacity="1"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#evidenceSpotlight)"/>
+
+  <!-- Forensic Grid Surface with metric scale markings -->
+  <line x1="50" y1="360" x2="750" y2="360" stroke="#475569" stroke-width="3"/>
+  <!-- Centimeter tick marks -->
+  
+    <line x1="100" y1="355" x2="100" y2="375" stroke="#94a3b8" stroke-width="2"/>
+    <text x="96" y="390" fill="#94a3b8" font-size="10">0cm</text>
+  
+    <line x1="122" y1="355" x2="122" y2="368" stroke="#94a3b8" stroke-width="1"/>
+    
+  
+    <line x1="144" y1="355" x2="144" y2="368" stroke="#94a3b8" stroke-width="1"/>
+    
+  
+    <line x1="166" y1="355" x2="166" y2="368" stroke="#94a3b8" stroke-width="1"/>
+    
+  
+    <line x1="188" y1="355" x2="188" y2="368" stroke="#94a3b8" stroke-width="1"/>
+    
+  
+    <line x1="210" y1="355" x2="210" y2="375" stroke="#94a3b8" stroke-width="2"/>
+    <text x="206" y="390" fill="#94a3b8" font-size="10">5cm</text>
+  
+    <line x1="232" y1="355" x2="232" y2="368" stroke="#94a3b8" stroke-width="1"/>
+    
+  
+    <line x1="254" y1="355" x2="254" y2="368" stroke="#94a3b8" stroke-width="1"/>
+    
+  
+    <line x1="276" y1="355" x2="276" y2="368" stroke="#94a3b8" stroke-width="1"/>
+    
+  
+    <line x1="298" y1="355" x2="298" y2="368" stroke="#94a3b8" stroke-width="1"/>
+    
+  
+    <line x1="320" y1="355" x2="320" y2="375" stroke="#94a3b8" stroke-width="2"/>
+    <text x="316" y="390" fill="#94a3b8" font-size="10">10cm</text>
+  
+    <line x1="342" y1="355" x2="342" y2="368" stroke="#94a3b8" stroke-width="1"/>
+    
+  
+    <line x1="364" y1="355" x2="364" y2="368" stroke="#94a3b8" stroke-width="1"/>
+    
+  
+    <line x1="386" y1="355" x2="386" y2="368" stroke="#94a3b8" stroke-width="1"/>
+    
+  
+    <line x1="408" y1="355" x2="408" y2="368" stroke="#94a3b8" stroke-width="1"/>
+    
+  
+    <line x1="430" y1="355" x2="430" y2="375" stroke="#94a3b8" stroke-width="2"/>
+    <text x="426" y="390" fill="#94a3b8" font-size="10">15cm</text>
+  
+    <line x1="452" y1="355" x2="452" y2="368" stroke="#94a3b8" stroke-width="1"/>
+    
+  
+    <line x1="474" y1="355" x2="474" y2="368" stroke="#94a3b8" stroke-width="1"/>
+    
+  
+    <line x1="496" y1="355" x2="496" y2="368" stroke="#94a3b8" stroke-width="1"/>
+    
+  
+    <line x1="518" y1="355" x2="518" y2="368" stroke="#94a3b8" stroke-width="1"/>
+    
+  
+    <line x1="540" y1="355" x2="540" y2="375" stroke="#94a3b8" stroke-width="2"/>
+    <text x="536" y="390" fill="#94a3b8" font-size="10">20cm</text>
+  
+    <line x1="562" y1="355" x2="562" y2="368" stroke="#94a3b8" stroke-width="1"/>
+    
+  
+    <line x1="584" y1="355" x2="584" y2="368" stroke="#94a3b8" stroke-width="1"/>
+    
+  
+    <line x1="606" y1="355" x2="606" y2="368" stroke="#94a3b8" stroke-width="1"/>
+    
+  
+    <line x1="628" y1="355" x2="628" y2="368" stroke="#94a3b8" stroke-width="1"/>
+    
+  
+    <line x1="650" y1="355" x2="650" y2="375" stroke="#94a3b8" stroke-width="2"/>
+    <text x="646" y="390" fill="#94a3b8" font-size="10">25cm</text>
+  
+    <line x1="672" y1="355" x2="672" y2="368" stroke="#94a3b8" stroke-width="1"/>
+    
+  
+    <line x1="694" y1="355" x2="694" y2="368" stroke="#94a3b8" stroke-width="1"/>
+    
+  
+    <line x1="716" y1="355" x2="716" y2="368" stroke="#94a3b8" stroke-width="1"/>
+    
+  
+
+  <!-- Yellow Plastic Forensic Evidence Cone Marker #04 -->
+  <polygon points="140,240 180,240 195,340 125,340" fill="#facc15" stroke="#ca8a04" stroke-width="2"/>
+  <rect x="142" y="270" width="36" height="36" fill="#000000" rx="3"/>
+  <text x="151" y="297" fill="#ffffff" font-size="24" font-weight="900">04</text>
+
+  <!-- Detailed Firearm (Glock 19 Gen 5 with Suppressor & Weapon Light) -->
+  <g id="firearm" transform="translate(260, 160)">
+    <!-- Silencer / Suppressor -->
+    <rect x="360" y="70" width="130" height="32" rx="4" fill="#1e293b" stroke="#475569" stroke-width="2"/>
+    <line x1="390" y1="70" x2="390" y2="102" stroke="#334155"/>
+    <line x1="420" y1="70" x2="420" y2="102" stroke="#334155"/>
+    <line x1="450" y1="70" x2="450" y2="102" stroke="#334155"/>
+    <!-- Slide -->
+    <rect x="180" y="66" width="185" height="40" rx="3" fill="#0f172a" stroke="#64748b" stroke-width="2"/>
+    <!-- Cocking Serrations -->
+    <line x1="190" y1="72" x2="190" y2="92" stroke="#475569" stroke-width="2"/>
+    <line x1="196" y1="72" x2="196" y2="92" stroke="#475569" stroke-width="2"/>
+    <line x1="202" y1="72" x2="202" y2="92" stroke="#475569" stroke-width="2"/>
+    <line x1="208" y1="72" x2="208" y2="92" stroke="#475569" stroke-width="2"/>
+    <!-- Ejection Port & Extractor -->
+    <rect x="270" y="68" width="35" height="15" fill="#334155"/>
+    <!-- Lower Polymer Frame & Grip -->
+    <polygon points="180,106 295,106 280,210 220,205 210,125 180,115" fill="#1e293b" stroke="#334155" stroke-width="2"/>
+    <!-- Trigger Guard & Trigger -->
+    <path d="M 270 120 C 270 155 240 155 235 125" fill="none" stroke="#475569" stroke-width="4"/>
+    <path d="M 252 120 Q 256 135 245 138" fill="none" stroke="#cbd5e1" stroke-width="3"/>
+    <!-- Tactical Light / Laser Attachment -->
+    <rect x="295" y="108" width="65" height="22" fill="#020617" stroke="#38bdf8" stroke-width="1.5"/>
+    <circle cx="355" cy="119" r="4" fill="#38bdf8" filter="drop-shadow(0 0 5px #38bdf8)"/>
+  </g>
+
+  <!-- AI Analysis Bounding Overlay -->
+  <rect x="390" y="210" width="370" height="175" fill="none" stroke="#ef4444" stroke-width="2"/>
+  <rect x="390" y="186" width="320" height="22" fill="#dc2626"/>
+  <text x="396" y="201" fill="#ffffff" font-size="11" font-weight="bold">AI DETECT: SEMI-AUTO FIREARM (99.7%)</text>
+
+  <!-- Secondary Classification Pill -->
+  <rect x="520" y="325" width="220" height="42" fill="#1e293b" stroke="#ef4444" stroke-width="1.5" rx="4"/>
+  <text x="530" y="342" fill="#f87171" font-size="10" font-weight="bold">MODEL: GLOCK 19 9x19mm</text>
+  <text x="530" y="357" fill="#94a3b8" font-size="9">ATTACHMENTS: SUPPRESSOR, WML</text>
+
+  <!-- Macro Scale Header -->
+  <text x="35" y="45" fill="#e2e8f0" font-size="14" font-weight="bold">ITEM ID: EVD-2026-8941-003 // BALLISTICS BENCH PHOTO</text>
+  <text x="35" y="65" fill="#94a3b8" font-size="11">CUSTODY SEAL VERIFIED | CHAIN REF: DET. M. REYES #4019 | DIGITAL SHA256 VALIDATED</text>
+</svg>
