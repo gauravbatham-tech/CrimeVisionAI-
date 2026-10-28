@@ -43,8 +43,8 @@ export default function EvidenceUploadModal({
   };
 
   return (
-    <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
-      <div className="tactical-card max-w-lg w-full p-5 space-y-4 border border-cyan-500/40 bg-[#0a101d] shadow-[0_0_25px_rgba(6,182,212,0.2)]">
+    <div className="modal-backdrop">
+      <div className="modal-dialog tactical-card max-w-lg w-full p-5 space-y-4">
         {/* Modal Header */}
         <div className="flex items-center justify-between border-b border-[#1e293b] pb-3">
           <div className="flex items-center gap-2">

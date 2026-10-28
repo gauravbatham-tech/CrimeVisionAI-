@@ -12,14 +12,12 @@ import NewCaseModal from './components/NewCaseModal';
 
 import { fallbackCases } from './mockData/initialCases';
 import {
-  Layers,
-  Clock,
-  Users,
-  Compass,
   Bot,
-  AlertTriangle,
-  Sparkles,
-  Download
+  Clock3,
+  Compass,
+  FileText,
+  ShieldCheck,
+  Users
 } from 'lucide-react';
 
 export default function App() {
@@ -336,116 +334,122 @@ Correlate getaway silver sports sedan ALPR records with highway toll cameras.`,
   };
 
   const navTabs = [
-    { id: 'EVIDENCE', label: 'EVIDENCE EXPLORER', icon: Layers, count: activeCase?.evidence?.length },
-    { id: 'TIMELINE', label: 'CHRONOLOGICAL TIMELINE', icon: Clock, count: activeCase?.timeline?.length },
-    { id: 'ENTITIES', label: 'POI & WEAPON MATRIX', icon: Users, count: activeCase?.metrics?.personsOfInterest },
-    { id: 'MAP', label: 'SCENE RECONSTRUCTION', icon: Compass },
-    { id: 'COPILOT', label: 'FORENSIC AI COPILOT', icon: Bot, isAi: true }
+    { id: 'EVIDENCE', label: 'Evidence', icon: FileText, count: activeCase?.evidence?.length },
+    { id: 'TIMELINE', label: 'Timeline', icon: Clock3, count: activeCase?.timeline?.length },
+    { id: 'ENTITIES', label: 'People & objects', icon: Users, count: activeCase?.metrics?.personsOfInterest },
+    { id: 'MAP', label: 'Scene map', icon: Compass },
+    { id: 'COPILOT', label: 'AI copilot', icon: Bot }
   ];
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#070b14] text-slate-100">
-      {/* Top Tactical Navbar */}
-      <Navbar
-        cases={cases}
-        activeCase={activeCase}
-        onSelectCase={handleSelectCase}
-        onOpenNewCaseModal={() => setIsNewCaseOpen(true)}
-        onOpenApiKeyModal={() => setIsApiKeyOpen(true)}
-        onExportPdf={handleExportPdf}
-        hasApiKey={Boolean(apiKey)}
-      />
-
-      {/* Main Container */}
-      <main className="flex-1 max-w-7xl w-full mx-auto p-4 space-y-4">
-        {/* Top Executive Dashboard Overview */}
-        <DashboardOverview activeCase={activeCase} />
-
-        {/* Tab Navigation Ribbon */}
-        <div className="tactical-card p-1.5 flex flex-wrap items-center gap-1.5 border border-[#1e293b]">
-          {navTabs.map((t) => {
-            const Icon = t.icon;
-            const isActive = activeTab === t.id;
-            return (
-              <button
-                key={t.id}
-                onClick={() => setActiveTab(t.id)}
-                className={`flex items-center gap-2 py-2 px-3.5 rounded text-xs font-tactical font-semibold tracking-wider transition cursor-pointer ${
-                  isActive
-                    ? 'bg-gradient-to-r from-cyan-600 to-cyan-700 text-white shadow-[0_0_12px_rgba(6,182,212,0.3)] border border-cyan-400/50'
-                    : 'text-slate-400 hover:text-cyan-300 hover:bg-[#0f172a]'
-                }`}
-              >
-                <Icon className={`w-4 h-4 ${isActive ? 'text-white' : 'text-cyan-400'}`} />
-                <span>{t.label}</span>
-                {t.count !== undefined && (
-                  <span
-                    className={`text-[10px] font-mono px-1.5 py-0.2 rounded ${
-                      isActive ? 'bg-cyan-900/80 text-cyan-200' : 'bg-slate-800 text-slate-400'
-                    }`}
-                  >
-                    {t.count}
-                  </span>
-                )}
-                {t.isAi && (
-                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-                )}
-              </button>
-            );
-          })}
+    <div className="app-shell">
+      <aside className="app-sidebar">
+        <div className="brand-lockup">
+          <div className="brand-mark"><ShieldCheck aria-hidden="true" /></div>
+          <div>
+            <div className="brand-name">CrimeVision</div>
+            <div className="brand-caption">Forensic workspace</div>
+          </div>
         </div>
-
-        {/* Active Tab Content Display */}
-        <div className="space-y-4">
-          {activeTab === 'EVIDENCE' && (
-            <MultimodalEvidenceHub
-              evidenceList={activeCase?.evidence || []}
-              onOpenUploadModal={() => setIsUploadOpen(true)}
-              activeCaseId={activeCase?.id}
-            />
-          )}
-
-          {activeTab === 'TIMELINE' && (
-            <ForensicTimeline
-              timeline={activeCase?.timeline || []}
-              discrepancies={activeCase?.discrepancies || []}
-              onSynthesizeTimeline={handleSynthesizeTimeline}
-              isSynthesizing={isSynthesizing}
-            />
-          )}
-
-          {activeTab === 'ENTITIES' && (
-            <ActionAndEntityMatrix evidenceList={activeCase?.evidence || []} />
-          )}
-
-          {activeTab === 'MAP' && (
-            <SpatialSceneReconstruction spatialData={activeCase?.spatialMap} />
-          )}
-
-          {activeTab === 'COPILOT' && (
-            <ForensicChatCopilot
-              activeCase={activeCase}
-              chatMessages={chatMessages}
-              onSendMessage={handleSendMessage}
-              isLoading={isChatLoading}
-              hasApiKey={Boolean(apiKey)}
-            />
-          )}
+        <div className="sidebar-label">Workspace</div>
+        <nav className="sidebar-nav" aria-label="Investigation sections">
+          {navTabs.map(({ id, label, icon: Icon, count }) => (
+            <button
+              type="button"
+              key={id}
+              className={activeTab === id ? 'active' : ''}
+              onClick={() => setActiveTab(id)}
+              aria-current={activeTab === id ? 'page' : undefined}
+            >
+              <Icon aria-hidden="true" />
+              <span>{label}</span>
+              {count !== undefined && <span className="sidebar-count">{count}</span>}
+            </button>
+          ))}
+        </nav>
+        <div className="sidebar-bottom">
+          <div className="sidebar-trust">
+            <div className="trust-title"><ShieldCheck aria-hidden="true" />Secure evidence workspace</div>
+            <div className="trust-copy">Evidence is organized with a clear chain of custody for every investigation.</div>
+          </div>
+          <div className="sidebar-user">
+            <div className="user-avatar">FI</div>
+            <div>
+              <div className="user-name">Forensic team</div>
+              <div className="user-role">Forensic Intelligence</div>
+            </div>
+          </div>
         </div>
-      </main>
+      </aside>
 
-      {/* Footer Status Bar */}
-      <footer className="tactical-border border-t border-[#1e293b] bg-[#070b14] px-4 py-2 text-[10px] font-mono text-slate-500 flex flex-wrap items-center justify-between gap-4 mt-6">
-        <div className="flex items-center gap-3">
-          <span className="text-cyan-400 font-bold">CRIMEVISION AI v2.6</span>
-          <span>// ISO/IEC 17025 DIGITAL FORENSICS CERTIFIED</span>
-          <span>// SHA-256 DIGITAL CHAIN OF CUSTODY ACTIVE</span>
-        </div>
-        <div className="flex items-center gap-2">
-          <span>MODEL: {apiKey ? 'GEMINI 2.5 FLASH (LIVE)' : 'LOCAL NEURAL HEURISTIC ENGINE'}</span>
-          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-        </div>
-      </footer>
+      <div className="app-workspace">
+        <Navbar
+          cases={cases}
+          activeCase={activeCase}
+          onSelectCase={handleSelectCase}
+          onOpenNewCaseModal={() => setIsNewCaseOpen(true)}
+          onOpenApiKeyModal={() => setIsApiKeyOpen(true)}
+          onExportPdf={handleExportPdf}
+          hasApiKey={Boolean(apiKey)}
+        />
+
+        <main className="workspace-content">
+          <div className="workspace-intro">
+            <div>
+              <div className="eyebrow">CrimeVision workspace</div>
+              <div className="page-title">
+                {navTabs.find((tab) => tab.id === activeTab)?.label || 'Investigation'}
+              </div>
+              <p className="page-subtitle">A clear view of your active case and its latest intelligence.</p>
+            </div>
+            <div className="system-status"><span className="status-dot" />Workspace secure</div>
+          </div>
+          <div className="content-layout">
+            <DashboardOverview activeCase={activeCase} />
+            <div className="analysis-panel">
+              {activeTab === 'EVIDENCE' && (
+                <MultimodalEvidenceHub
+                  evidenceList={activeCase?.evidence || []}
+                  onOpenUploadModal={() => setIsUploadOpen(true)}
+                  activeCaseId={activeCase?.id}
+                />
+              )}
+
+              {activeTab === 'TIMELINE' && (
+                <ForensicTimeline
+                  timeline={activeCase?.timeline || []}
+                  discrepancies={activeCase?.discrepancies || []}
+                  onSynthesizeTimeline={handleSynthesizeTimeline}
+                  isSynthesizing={isSynthesizing}
+                />
+              )}
+
+              {activeTab === 'ENTITIES' && (
+                <ActionAndEntityMatrix evidenceList={activeCase?.evidence || []} />
+              )}
+
+              {activeTab === 'MAP' && (
+                <SpatialSceneReconstruction spatialData={activeCase?.spatialMap} />
+              )}
+
+              {activeTab === 'COPILOT' && (
+                <ForensicChatCopilot
+                  activeCase={activeCase}
+                  chatMessages={chatMessages}
+                  onSendMessage={handleSendMessage}
+                  isLoading={isChatLoading}
+                  hasApiKey={Boolean(apiKey)}
+                />
+              )}
+            </div>
+          </div>
+        </main>
+
+        <footer className="app-footer">
+          <div><span className="footer-brand">CrimeVision AI</span> · Digital evidence, organized with care</div>
+          <div>Analysis engine: {apiKey ? 'Gemini connected' : 'Local mode'}</div>
+        </footer>
+      </div>
 
       {/* Modals */}
       <EvidenceUploadModal

@@ -49,8 +49,8 @@ export default function ApiKeyModal({
   };
 
   return (
-    <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
-      <div className="tactical-card max-w-md w-full p-5 space-y-4 border border-cyan-500/40 bg-[#0a101d]">
+    <div className="modal-backdrop">
+      <div className="modal-dialog tactical-card max-w-md w-full p-5 space-y-4">
         <div className="flex items-center justify-between border-b border-[#1e293b] pb-3">
           <div className="flex items-center gap-2">
             <Key className="w-4 h-4 text-cyan-400" />
